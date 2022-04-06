@@ -1,0 +1,31 @@
+button{
+  background-color:rgb(10, 154, 154);
+  font-family:'Times New Roman', Times, serif
+}
+h4{
+  background-color:rgb(10, 154, 154);
+  text-align:center;
+  padding: 5px 5px;
+  border-radius: 5px;
+  color:white;
+  font-family:'Times New Roman', Times, serif
+}
+.card{
+  margin-top: 25%;
+}
+div.data {
+  display:grid;
+  grid-template-columns: max-content max-content;
+  grid-gap:5px;
+}
+div.data label {
+   text-align:left;
+  font-size:medium;
+  font-weight:600
+}
+div.data label:after {
+ align-content:flex-end;
+ font-weight: 600;
+ font-size: medium;
+
+}

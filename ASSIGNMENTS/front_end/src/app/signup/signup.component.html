@@ -1,0 +1,174 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-4 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title text-center mb-4">Sign Up</h4>
+          <p class="text-center" *ngIf="!email.valid && email.touched">
+            ***Invalid email
+          </p>
+          <p class="text-center" *ngIf="!pass.valid && pass.touched">
+            ***Weak password
+          </p>
+          <p class="text-center" *ngIf="!username.valid && username.touched">
+            ***Username required
+          </p>
+          <p class="text-center" *ngIf="!rs.valid && rs.touched">
+            ***Relationshipstatus is required
+          </p>
+          <p
+            class="text-center"
+            *ngIf="!occupation.valid && occupation.touched"
+          >
+            ***Occupation is required
+          </p>
+          <p class="text-center" *ngIf="!phone.valid && phone.touched">
+            ***Phone number is required
+          </p>
+          <form (ngSubmit)="onsubmit()" #formvalue="ngForm">
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-user"></i>
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  name="user"
+                  ngModel
+                  class="form-control"
+                  placeholder="Username"
+                  required
+                  #username="ngModel"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                </div>
+                <input
+                  name="email"
+                  ngModel
+                  class="form-control"
+                  placeholder="abc@gmail.com"
+                  type="email"
+                  required
+                  email
+                  #email="ngModel"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-phone"></i>
+                  </span>
+                </div>
+                <input
+                  name="phone"
+                  ngModel
+                  class="form-control"
+                  placeholder="Phone number"
+                  type="phonenumber"
+                  required
+                  #phone="ngModel"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-genderless"></i>
+                  </span>
+                </div>
+                <select name="gender" class="form-control" ngModel>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-tasks"></i>
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  name="occupation"
+                  ngModel
+                  class="form-control"
+                  placeholder="occupation"
+                  required
+                  #occupation="ngModel"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-star"></i>
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  name="rs"
+                  ngModel
+                  class="form-control"
+                  placeholder="Relationship status"
+                  required
+                  #rs="ngModel"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-key"></i>
+                  </span>
+                </div>
+                <input
+                  class="form-control"
+                  placeholder="******"
+                  type="password"
+                  name="password"
+                  ngModel
+                  required
+                  minlength="8"
+                  #pass="ngModel"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <button
+                type="submit"
+                class="btn btn-block"
+                [disabled]="!formvalue.valid"
+              >
+                Register
+              </button>
+            </div>
+            <p class="text-center">
+              <a class="btn">Already have an account?</a>
+              <a
+                routerLink="../login"
+                style="color: black; text-decoration: none"
+                >Signin!
+              </a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

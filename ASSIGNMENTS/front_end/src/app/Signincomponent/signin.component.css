@@ -1,0 +1,23 @@
+button{
+  background-color:rgb(10, 154, 154);
+  font-family:'Times New Roman', Times, serif
+}
+h4{
+  background-color:rgb(10, 154, 154);
+  text-align:center;
+  padding: 5px 5px;
+  border-radius: 5px;
+  color:white;
+  font-family:'Times New Roman', Times, serif
+}
+.card{
+  margin-top: 25%;
+}
+input.ng-invalid.ng-touched{
+  border : 1px solid rgb(113, 38, 38);
+}
+#error,.text-center{
+  font-size:medium;
+  font-weight:600
+}
+

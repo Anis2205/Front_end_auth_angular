@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-4 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title text-center mb-4">Sign in</h4>
+          <p
+            class="text-center"
+            *ngIf="
+              (!email.valid && email.touched) || (!pass.valid && pass.touched)
+            "
+          >
+            ***Invalid User
+          </p>
+          <p class="text-center" id="error"></p>
+          <form (ngSubmit)="onsubmit()" #formvalue="ngForm">
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                </div>
+                <input
+                  name="email"
+                  ngModel
+                  class="form-control"
+                  placeholder="abc@gmail.com"
+                  type="email"
+                  required
+                  email
+                  #email="ngModel"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-key"></i>
+                  </span>
+                </div>
+                <input
+                  class="form-control"
+                  placeholder="******"
+                  type="password"
+                  name="password"
+                  ngModel
+                  required
+                  #pass="ngModel"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <button
+                type="submit"
+                class="btn btn-block"
+                [disabled]="!formvalue.valid"
+              >
+                Login
+              </button>
+            </div>
+            <p class="text-center">
+              <a href="#" class="btn">New User?</a>
+              <a
+                routerLink="../signup"
+                style="color: black; text-decoration: none"
+                >Signup!
+              </a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
